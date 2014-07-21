@@ -1,0 +1,11 @@
+<div class="grid grid-2-320 grid-3-640 listings">
+	<% _.forEach(results, function(listing) { %>
+		<a href="#/listing/<%= listing.listing_id %>">
+			<div>
+				<img src="<%= listing.MainImage && listing.MainImage.url_570xN %>">
+				<hr>
+				<p><%= listing.title %></p>
+			</div>
+		</a>
+	<% }); %>
+</div>

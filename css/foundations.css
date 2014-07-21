@@ -1,0 +1,142 @@
+/**
+ * --------------------------
+ * variables
+ */
+ :root {
+    --bar-color: #cdccfa;
+    --bar-color-2: #3734f4;
+}
+/**
+ * --------------------------
+ * box-sizing
+ */
+ * {
+    box-sizing: border-box;
+    transition: all .25s ease;
+}
+/**
+ * --------------------------
+ * grids
+ */
+ .grid {
+    text-align: justify;
+    font-size: 0;
+}
+.grid::after {
+    content:'';
+    width: 100%;
+    display: inline-block;
+}
+.grid > * {
+    display: inline-block;
+    width: 100%;
+    font-size: 1rem;
+    vertical-align: top;
+    text-align: left;
+}
+@media (min-width: 320px) {
+    .grid-2-320 > * {
+        width: 49%;
+    }
+}
+@media (min-width: 640px) {
+    .grid-4-640 > * {
+        width: 24%;
+    }
+    .grid-2-640 > * {
+        width: 49%;
+    }
+    .grid-3-640 > * {
+        width: 32.333%;
+    }
+}
+/**
+ * --------------------------
+ * listings section
+ */
+ .listings {
+    max-width: 1024px;
+    margin: 2% auto;
+    animation: fadeDown .5s ease both;
+}
+.listings > * {
+    margin-bottom: 2%;
+    perspective: 1000px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+.listings > *:hover {
+    box-shadow: 0 10px 2500px rgba(0, 0, 0, 0.85);
+    z-index: 10;
+}
+.listings > * > div {
+    padding: 2em;
+    border-top: 1em solid var(--bar-color);
+    transform: translateZ(0px);
+    background-color: white;
+}
+.listings p {
+    margin-bottom: 0;
+}
+.listings > *:hover > div {
+    cursor: pointer;
+    transform: translateZ(25px);
+}
+.listings img {
+    display: block;
+    margin: 0;
+    min-height:100px;
+    max-width: 100%;
+}
+/**
+ * --------------------------
+ * global styles
+ */
+ hr {
+    margin: 3em 0;
+    border: none;
+    border-top: 1px solid var(--bar-color-2);
+    position: relative;
+}
+/**
+ * --------------------------
+ * listings section
+ */
+ .listing {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #efefef;
+    margin-bottom: 2%;
+    animation: fadeDown .5s ease both;
+}
+.listing hr::after {
+    content:'§';
+    font-size: 1.5em;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #efefef;
+    color: var(--bar-color-2);
+    padding:.5em 1em;
+    border-radius: 50%;
+}
+.listing .back {
+}
+.listing img {
+    width: 100%;
+}
+/**
+ * --------------------------
+ * animation
+ */
+ @keyframes fadeDown {
+    0% {
+        transform: translateY(-2em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0em);
+        opacity: 1;
+    }
+}
