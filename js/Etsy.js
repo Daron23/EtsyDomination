@@ -136,21 +136,6 @@ EtsyClient.prototype.showListing = function(id) {
     });
 }
 
-EtsyClient.prototype.handleClickEvents = function() {
-    var self = this;
-    // $(this.container).on('click', '.listings > div', function() {
-    //     console.log('clicking on:');
-    //     console.log(this);
-    //     self.showListing(this.getAttribute('listing'));
-    // });
-    // $(this.container).on('click', '.listing .back', function() {
-    //     self.showListings();
-    // });
-    // $(window).on('keydown', function(e) {
-    //     if(e.which === 27) self.showListings();
-    // });
-}
-
 EtsyClient.prototype.setupRouting = function(){
     var self = this;
 
